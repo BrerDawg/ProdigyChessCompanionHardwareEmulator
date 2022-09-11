@@ -164,7 +164,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "prodigy_main.h"
 
 
-//asm("int3");						//usefull to trigger debugger
+//asm("int3");						//useful to trigger debugger
 
 
 
