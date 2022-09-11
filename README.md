@@ -1,4 +1,4 @@
-```
+
 Dec-2018
 
 This app 'emulates' the ACI Prodigy chess game hardware, the user manual avail from the net dates to 1981.
@@ -108,6 +108,7 @@ Some other links:
 http://www.schach-computer.info/wiki/index.php/Chafitz_Destiny
 http://www.spacious-mind.com/html/destiny_prodigy.html
 http://alain.zanchetta.free.fr/docs/AppliedConcepts/ProdigyUS.pdf
-```
+
+
 ![Flip Leaf Clock](prodigy0.jpg)
 
