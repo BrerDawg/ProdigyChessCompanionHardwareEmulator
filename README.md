@@ -1,15 +1,14 @@
-```
+
 Dec-2018
 
 This app 'emulates' the ACI Prodigy chess game hardware, the user manual avail from the net dates to 1981.
 
-Building
-~~~~~~~~
+## Building
 Tested with gnu gcc, for windows it compiles with msys/mingw. 
 Requires FLTK libraries for linking, fltk-1.3.4-2 or better.
 
 
-It also requires a rom dump file called '0x2000.bin', this can be found in a zip archive 'prodigy.zip' at your nearest MAME rom site.
+It also REQUIRES a rom dump file called '0x2000.bin', this can be found in a zip archive 'prodigy.zip' at your nearest MAME rom site.
 
 Unzip the archive so '0x2000.bin' file (8KB) is in same directory as this app. 
 
@@ -30,9 +29,7 @@ You can increase to speed of emulation by reducing the delay 'usec delay' (delay
 There's menus for saving and loading the current state of cpu, ram and chessboard, so you can resume a game at a later time.
 
 
-Using the debugger console
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+## Using the debugger console
 Type 'h' for help, this calls script/bat 'open_editor.sh'  or  'open_editor.bat', mod these to invoke to your text editor (make sure they have execution priveledges).
 
 Most displayed numbers are in hex.
@@ -52,32 +49,27 @@ The console lacks a way of recalling previous commands which is a little annoyin
 
 
 
-Development
-~~~~~~~~~~~
+## Development
 The hardware involved was gleaned from information and PCB images kindly placed on the web, see: http://frakaday.blogspot.com, this is a blog about developing
 a MAME driver for this unit.
 
 There is a MOS 6502 processor which hails from the late 70's, its VIA a 6522, 8KB ROM, 2KB RAM, a number of common 74xxx TTL chips, leds, switches, piezo 'speaker'(by the various pitch beep sounds heard on this clip: https://www.youtube.com/watch?v=CI09gbgL6Ro ).
 
-Switches
-~~~~~~~~
+## Switches
 The chess pieces when being placed will momentarily close switch contacts below the chessboard, likewise do the control panel buttons.  These contacts are rapidly scanned in an x,y matrix fashion. A switch would sit across one x and y row. So how do you tell which switch is pressed? - simplest way is to drive say one of x rows only and read all the y rows to see which switch is closed. A closed switch will connect its driven x row to one of the read y rows. If you look at the buttons(switches) on the debug console window, you will see the x,y coords (hover over them) and their function. Note the potential buttons without meaningful labels (those with just with x.y coords labels) are probably not wired to anything. The x coords go right to left, bit 0 is assumed to be on the right, its just the way I laid out the buttons during developement, of course when clicking on the chessboard you are in effect closing the switches in the debug console window, its not reflected on the buttons though.
 
 To see the switch y input values being read (they appear on the VIA 8 bit ports), use the debug console and filter 2 read addresses with: fr 2000 2001. Then press one of the buttons, you'll see values change from 0xff to some other value. 0xff means the ports lines are floating high, this is what happens when no switches are closed. Note: the way I've shown x being driven and y's being read could also be the other way round, its just the way I've explained it here.
 
 To see which x row is being driven, filter VIA out port with: fw 2000 2000 (turn off filter reads will be clearer: fr -1 -1), you will see numbers 0x09-->0x00 being written. These numbers make their way to a SN74145 chip (via copper tracks), which is a bcd to decimal decoder. If a binary nine (1001) is fed to this chip, it will pull its 'nine' output low(active low), all its other outputs will be high. You can see this if you find a datasheet of this chip, it will have a truth table. Note with the filtered writes there is also an interleved 0x05-->0x00 pattern with the 0x09-->0x00 writes. These are for led muxing, so this VIA out port is being used for both scanning switches and led muxing.
 
-Led Muxing
-~~~~~~~~~~
+## Led Muxing
 To be documented.
 
-Beeping
-~~~~~~~
+## Beeping
 To be documented.
 
 
-Guff
-~~~~
+## Guff
 The emulator is written in gnu gcc c++, it includes mos6502 code generously made avail by Gianluca Ghettini: http://github.com/gianlucag/mos6502, its been moded to include a breakpoint mechanism.
 
 There is also a bare bones debugging console that allow observation of rom execution by the 6502 cpu, single stepping/breakpoints/address filtering/ram examine/etc. The console was very useful during the reverse engineering process, as it lets you observe memory accesses. The VIA is the main input/output path for the cpu to the rest of the circuit. So monitoring how its configured and modified revealed wiring that was not known.
@@ -108,7 +100,7 @@ Some other links:
 http://www.schach-computer.info/wiki/index.php/Chafitz_Destiny
 http://www.spacious-mind.com/html/destiny_prodigy.html
 http://alain.zanchetta.free.fr/docs/AppliedConcepts/ProdigyUS.pdf
-```
+
 
 ![ACI Prodigy](prodigy0.jpg)
 
