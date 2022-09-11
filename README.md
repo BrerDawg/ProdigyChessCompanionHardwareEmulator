@@ -28,9 +28,11 @@ You can increase to speed of emulation by reducing the delay 'usec delay' (delay
 
 There are menus for saving and loading the current state of cpu, ram and chessboard, so you can resume a game at a later time.
 
+Menu/Help displays 'help.txt', it calls script/bat 'open_editor.sh'  or  'open_editor.bat', mod these to invoke to your text editor (make sure they have execution priveledges).
+
 
 ## Using the debugger console
-Type 'h' for help, this calls script/bat 'open_editor.sh'  or  'open_editor.bat', mod these to invoke to your text editor (make sure they have execution priveledges).
+Type 'h' for command help.
 
 Most displayed numbers are in hex.
 
