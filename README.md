@@ -26,7 +26,7 @@ I do not own one these unit and cannot confirm the emulation operates a 100%, bu
 
 You can increase to speed of emulation by reducing the delay 'usec delay' (delay in microseconds), hover over this control to get further tips, hit enter to make the change.
 
-There's menus for saving and loading the current state of cpu, ram and chessboard, so you can resume a game at a later time.
+There are menus for saving and loading the current state of cpu, ram and chessboard, so you can resume a game at a later time.
 
 
 ## Using the debugger console
