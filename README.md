@@ -41,7 +41,7 @@ If you want to filter cpu writes and only see when a particular address gets wri
 To see all writes to VIA which is at 2000Hx, type: 'fw 2000 200f', likewise read filtering can also be enabled. 
 When you want to disable filtering use -1 for both ranges, e.g: 'fr -1 -1'.
 
-To see the very first boot cpu access, hit 'p' to pause, then 'bo' for boot, then 's' for single step, the boot vector is: 60b7 Hx.
+To see the very first boot cpu access, Enter 'p' to pause, then 'bo' for boot, then 's' for single step, the boot vector is: 60b7 Hx.
 
 To examine memory, for example the boot vector in rom, at fffc Hx, type: 'ex ff80'.
 
