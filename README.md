@@ -88,8 +88,8 @@ The beeping is rather poorly implemented (only 2 pitches supported), it's done b
 
 The 'prodigy_main.cpp' file has hardware hint comments near its top. This file/code has most of the processing code:
 
-'thrd_cpu_cb(..)' is the 6502 cpu execution thread callback
-'cb_timer1(..)' is repeated called (it's called by the fltk gui thread) and is where most of console is serviced.
+'thrd_cpu_cb(..)' is the 6502 cpu execution thread callback.
+'cb_timer1(..)' is called by the fltk gui thread, and is where most of console is serviced.
 
 
 
