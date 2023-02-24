@@ -100,8 +100,8 @@ Hope you'll also enjoy stepping back to the cutting edge of 80's technology, and
 Some other links:
 
 http://www.schach-computer.info/wiki/index.php/Chafitz_Destiny<br/>
-http://www.spacious-mind.com/html/destiny_prodigy.htmly<br/>
-http://alain.zanchetta.free.fr/docs/AppliedConcepts/ProdigyUS.pdfy<br/>
+http://www.spacious-mind.com/html/destiny_prodigy.html<br/>
+http://alain.zanchetta.free.fr/docs/AppliedConcepts/ProdigyUS.pdf<br/>
 
 
 ![ACI Prodigy](prodigy0.jpg)
